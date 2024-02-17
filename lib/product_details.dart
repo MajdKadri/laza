@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:laza/Model/products.dart';
 import 'package:laza/services/product_service.dart';
+import 'package:laza/widgets/arrow_back_button.dart';
 
 class ProductDetails extends StatelessWidget {
   ProductDetails({super.key, required this.id});
 
-  int id;
+  num id;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +26,16 @@ class ProductDetails extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.40,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                      image: NetworkImage(temp.thumbnail),
-                    )),
+                            image: NetworkImage(
+                              temp.thumbnail,
+                            ),
+                            fit: BoxFit.fill)),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: BackButton(
-                            color: Colors.red,
+                          alignment: Alignment.topLeft,
+                          child: ArrowBackButton(
+                            iconwidget: Icon(Icons.arrow_back,color: Colors.grey,),
                           )),
                     ),
                   ),

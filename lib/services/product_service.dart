@@ -11,6 +11,7 @@ class ProductService {
 }
 
 abstract class ProductServiceImp extends ProductService {
+
   Future<List<Resultmodel>> getallproducts();
   Future <Resultmodel> getoneproduct(int id);
 
@@ -34,7 +35,7 @@ class ProductServiceGet extends ProductServiceImp {
   }
 
   @override
-  Future<Resultmodel>  getoneproduct(int id) async {
+  Future<Resultmodel>  getoneproduct(num id) async {
    response=await dio.get('https://dummyjson.com/products/${id}');
    Products product = Products.fromMap(response.data);
    return product ;

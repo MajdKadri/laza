@@ -8,9 +8,8 @@ import 'Model/products.dart';
 import 'first_page.dart';
 import 'services/product_service.dart';
 
-void  main() async {
-Products res= await ProductServiceGet().getoneproduct(20) as Products;
-print(res.price );
+void  main()  {
+
   runApp(MyApp());
 
 }
